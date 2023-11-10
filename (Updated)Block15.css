@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================== */
+/* VARIABLES AND GLOBALS */
+/* ========================== */
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-pink: #ea7eff;
+    --color-blue: #32a6ff;
+    --color-green: #a2faa5;
+    --color-yellow: #ffff7a;
+    --color-orange: rgb(255, 199, 88);
+    --desktop-screen-size: 1600;
+    --mobile-screen-size: 576;
+    --desktop-rem-size: 18;
+    --mobile-rem-size: 16;
+    --header-font: 'kanit', sans-serif;
+    --body-font: 'kanit', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    font-family: var(--body-font);
+    font-weight: 400;
+    background-color: var(--color-blue);
+    height: 100vh;
+}
+.show {
+    opacity: 1;
+}
+.hidden {
+    opacity: 0;;
+}
+
+/* ========================== */
+/* TYPOGRAPHY */
+/* ========================== */
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--header-font);
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+/* ========================== */
+/* BUTTONS */
+/* ========================== */
+.btn-primary:hover::before {
+    transform: translateX(0);
+    transition: .225s ease-out;
+}
+.btn-primary::before {
+    display: block;
+    content: '';
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--color-orange);
+
+    transform: translateX(-100%);
+    transition: .325s ease-out;
+    z-index: -1;
+}
+.btn-primary {
+    overflow: hidden;
+    z-index: 1;
+}
+.btn {
+    position: relative;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--color-white);
+    border-radius: 10px;
+    width: calc(1em * (200 / var(--desktop-rem-size)));
+    padding-top: calc(1em * (5 / var(--desktop-rem-size)));
+    padding-bottom: calc(1em * (5 / var(--desktop-rem-size)));
+    font-family: var(--header-font);
+    text-transform: uppercase;
+    font-size: calc(1em * (18 / var(--desktop-rem-size)));
+    font-weight: 700;
+    background-color: transparent;
+    color: var(--color-white);
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+
+/* ========================== */
+/* INPUT SECTION */
+/* ========================== */
+.page-section--flavor-input .froyo-color-secondary {
+    color: var(--color-yellow);
+}
+.page-section--flavor-input .froyo-color-primary {
+    color: var(--color-green);
+}
+.page-section--flavor-input .section-content .btn {
+    margin-top: 30px;
+}
+.page-section--flavor-input .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.page-section--flavor-input input:focus {
+    outline-color: var(--color-pink);
+}
+.page-section--flavor-input input {
+    border: none;
+    border-radius: calc(1em * (12 / var(--desktop-rem-size)));
+    padding: 10px;
+    width: calc(1em * (400 / var(--desktop-rem-size)));
+}
+.page-section--flavor-input .section-header h1 {
+    text-align: center;
+}
+
+/* ========================== */
+/* COUNT DISPLAY SECTION */
+/* ========================== */
+.page-section--flavor-count .section-content table tr td:last-child {
+    color: var(--color-green);
+    font-weight: 700;
+}
+.page-section--flavor-count .section-content table tr td:first-child::after {
+    display: inline-block;
+    content: ':';
+    position: relative;
+}
+.page-section--flavor-count .section-content table tr td:first-child {
+    position: relative;
+}
+.page-section--flavor-count .section-content table tr {
+    display: flex;
+    gap: 20px;
+}
+.page-section--flavor-count .section-content table {
+    color: var(--color-white);
+    font-size: calc(1em * (30 / var(--desktop-rem-size)));
+}
+.page-section--flavor-count .section-content span {
+    color: var(--color-white);
+    font-size: calc(1em * (30 / var(--desktop-rem-size)));
+}
+.page-section--flavor-count .inner-wrapper .section-header h2 {
+    color: var(--color-blue);
+    text-align: center;
+}
+.page-section--flavor-count .inner-wrapper .section-content {
+    padding: 30px 0px;
+}
+.page-section--flavor-count .inner-wrapper .section-header {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 10px;
+}
+.page-section--flavor-count .inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid var(--color-white);
+    border-radius: calc(1em * (12 / var(--desktop-rem-size)));
+    width: calc(1em * (400 / var(--desktop-rem-size)));
+}
+.page-section--flavor-count {
+    padding: 100px 0px;
+}
